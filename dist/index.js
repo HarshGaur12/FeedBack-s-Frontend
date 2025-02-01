@@ -77,7 +77,7 @@ signupForm.addEventListener('click', (e) =>{
 loginBtnInForm.addEventListener('click', () =>{
     signupModal.classList.add('hidden')
     loginModal.classList.remove('hidden')
-    preserveScroll()
+    preserveScroll();
 })
 
 function preserveScroll() {
