@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBacks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/satoshi/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="output.css">
+
+</head>
+<body class="">
+
+    <!-- navbar starts  -->
+
+    <nav class='w-full h-14 flex justify-between px-4 md:px-10 items-center bg-opacity-40 fixed backdrop-blur z-10'>
+        <div class='text-2xl font-bold cursor-pointer'>FeedBacks.in</div>
+        <ul class='hidden md:flex'>
+            <li class='mx-[20px] cursor-pointer hover:font-semibold hover:underline'>Home</li>
+            <li class='mx-[20px] cursor-pointer hover:font-semibold hover:underline'>About Us</li>
+            <li class='mx-[20px] cursor-pointer hover:font-semibold hover:underline'>Contact Us</li>
+        </ul>
+        <div class='hidden md:block'>
+            <button type="button" id="login-btn" class='px-2 py-1 mx-[5px] rounded-md hover:bg-green-400 hover:text-white hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in border-[2px] hover:border-green-400'>Log In</button>
+            <button type="button" id="signup-btn" class='px-2 py-1 mx-[5px] rounded-md text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black'>Sign Up</button>
+        </div>
+        <div class='md:hidden'>
+            <a href="#" class='text-2xl'>&#8801;</a>
+        </div>
+    </nav>
+
+    <!-- navbar ends -->
+
+
+    <!-- login form starts -->
+
+    <div id='login-modal' class='hidden'>
+        <div class='backdrop-blur z-20 w-screen h-screen fixed flex justify-center items-center'>
+            <div id="login-form" class='bg-white w-[320px] h-auto xs:w-96 flex items-center rounded-2xl border-1 border-2 hover:border-[2px] hover:shadow-[0_0_10px_rgb(74,222,128)] flex-col text-black transition ease-in shadow-md hover:border-none hover:text-black'>
+                <div class='flex'>
+                    <h1 class='text-4xl relative top-8'>Login</h1>
+                    <a href="#" id="cross-btn" class='px-2 text-2xl left-[98px] relative xs:left-[131px] hover:bg-red-500 hover:text-white hover:rounded-tr-2xl'>&#10005;</a>
+                </div>
+                <form action="" method="" class='flex flex-col p-16'>
+                    <input type="text" name='username' placeholder='Username' required class="m-2 p-2 rounded-lg bg-transparent transition ease-in border-[2px] bg-white">
+                    <input type="Password" name='password' placeholder="Password" required class="m-2 p-2 rounded-lg bg-transparent transition ease-in border-[2px] bg-white">
+                    <button type="submit" class='m-2 py-2 text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black rounded-lg'>Login</button>
+                    <div class='flex justify-center items-center'>
+                        <div class='bg-gray-400 w-20 h-[1px] mx-2 rounded-lg'></div>
+                        <span class='font-semibold'>OR</span>
+                        <div class='bg-gray-400 w-20 h-[1px] mx-2 rounded-lg'></div>
+                    </div>
+                    <button class="flex items-center justify-center m-2 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition ease-in hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] hover:border-b-green-400 hover:text-white">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="w-5 h-5 mr-2">
+                        Sign in with Google
+                    </button>
+                    <span id="form-signup-btn" class='py-2 flex justify-center cursor-pointer text-xs'>Don't have an account?<span class='text-blue-500 mx-1'>Sign up</span></span>
+                    <span class='flex justify-center cursor-pointer text-xs text-blue-500'>Forget Password?</span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- login form ends -->
+
+
+
+    <!-- signup form starts -->
+
+    <div id='signup-modal' class='hidden'>
+        <div class='backdrop-blur z-20 w-screen h-screen fixed flex justify-center items-center'>
+            <div id="signup-form" class='bg-white w-[320px] h-auto xs:w-[26rem] flex items-center rounded-2xl border-1 border-2 hover:border-[2px] hover:shadow-[0_0_10px_rgb(74,222,128)] flex-col text-black transition ease-in shadow-md hover:border-none hover:text-black'>
+                <div class='flex'>
+                    <h1 class='text-4xl relative top-8'>Sign Up</h1>
+                    <a href="#" id="cross-btn2" class='px-2 text-2xl left-[5rem] relative xs:left-[8rem] hover:bg-red-500 hover:text-white hover:rounded-tr-2xl'>&#10005;</a>
+                </div>
+                <form action="" method="" class='flex flex-col p-16'>
+                    <input type="text" name='username' placeholder='Username' required class="m-2 p-2 rounded-lg bg-transparent transition ease-in border-[2px] bg-white">
+                    <input type="text" name='email' placeholder='Email' required class="m-2 p-2 rounded-lg bg-transparent transition ease-in border-[2px] bg-white">
+                    <input type="Password" name='password' placeholder="Password" required class="m-2 p-2 rounded-lg bg-transparent transition ease-in border-[2px] bg-white">
+                    <input type="Password" name='confirmPassword' placeholder="Confirm Password" required class="m-2 p-2 rounded-lg bg-transparent transition ease-in border-[2px] bg-white">
+                    <button type="submit" class='m-2 py-2 text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black rounded-lg'>Create Account</button>
+                    <div class='flex justify-center items-center'>
+                        <div class='bg-gray-400 w-20 h-[1px] mx-2 rounded-lg'></div>
+                        <span class='font-semibold'>OR</span>
+                        <div class='bg-gray-400 w-20 h-[1px] mx-2 rounded-lg'></div>
+                    </div>
+                    <button class="flex items-center justify-center m-2 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition ease-in hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] hover:border-b-green-400 hover:text-white">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="w-5 h-5 mr-2">
+                        Sign up with Google
+                    </button>
+                    <span id="form-login-btn" class='py-2 flex justify-center cursor-pointer text-xs'>Already have an account?<span class='text-blue-500 mx-1'>Login</span></span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- signup form ends -->
+
+
+    <!-- main section starts -->
+
+    <section class='bg-[radial-gradient(circle_at_0_100%,#d8eedc,#fff0_50%),radial-gradient(circle_at_100%_100%,#e2e1ff,#fff0_50%)] h-screen'>
+        <header class='w-full h-auto flex justify-center items-center absolute sm:top-32 top-20 flex-col'>
+            <h1 class='text-5xl text-center w-3/5 md:text-7xl'>Your feedback matters! Share your thoughts.</h1>
+            <p class='text-center w-3/4 text-xl relative top-4 sm:top-10 text-[#51575c] md:text-2xl'>Enhance events with real-time feedback! Gain insights, improve experiences, and make data-driven decisions effortlessly.</p>
+            <div class='relative top-10 sm:top-20 flex flex-wrap justify-center'>
+               <button type="button" id='getStart-btn' class='px-6 py-2 mx-5 my-2 text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black rounded-md'>Get Started</button>
+               <button type="button" id='login2-btn' class='px-10 py-2 mx-5 my-2 rounded-md hover:bg-green-400 hover:text-white hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in border-[2px] hover:border-green-400 bg-white'>Login</button>
+            </div>
+            <p class='text-center w-3/4 text-xl relative top-16 sm:top-36 text-[#51575c] md:text-2xl'>Your feedback is invaluable to us as we strive to provide the best possible experience.</p>
+        </header>
+    </section>
+
+    <!-- main section ends -->
+
+    <!--  <div class='w-full h-auto bg-white'>
+        <div class='w-full flex flex-wrap md:p-7 py-6 justify-center'>
+            <img class='w-64 xs:w-96 md:w-1/2 rounded-2xl shadow-[0_0_10px_rgb(234,236,240)]' src="https://images.pexels.com/photos/3861952/pexels-photo-3861952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            <div class='w-64 xs:w-96 md:w-1/2 flex justify-center flex-col flex-wrap py-4 md:py-0'>
+                <h1 class='font-semibold text-3xl text-center relative top-4 md:top-0'>About Us</h1>
+                <p class='text-center relative top-8 md:top-3'>At Insightful Feedback Services, we provide in-depth, actionable reviews to help events achieve greater impact and success. Our team of experts offers honest, strategic feedback tailored to enhance attendee experience, improve event planning, and drive meaningful engagement.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class='bg-[#030914] w-full h-96'></footer> -->
+    <script src="index.js"></script>
+</body> 
+</html>
+
+<!-- <div class='border-gray-100 shadow-sm border-[2px] w-11/12 h-auto bg-white relative sm:top-36 top-16 rounded-2xl'>
+    <div class='w-full flex flex-wrap md:p-7 py-6 justify-center'>
+        <img class='w-64 xs:w-96 md:w-1/2 rounded-2xl shadow-[0_0_10px_rgb(234,236,240)]' src="https://images.pexels.com/photos/3861952/pexels-photo-3861952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        <div class='w-64 xs:w-96 md:w-1/2 flex justify-center flex-col flex-wrap py-4 md:py-0'>
+            <h1 class='font-semibold text-3xl text-center relative top-4 md:top-0'>About Us</h1>
+            <p class='text-center relative top-8 md:top-3'>At Insightful Feedback Services, we provide in-depth, actionable reviews to help events achieve greater impact and success. Our team of experts offers honest, strategic feedback tailored to enhance attendee experience, improve event planning, and drive meaningful engagement.</p>
+        </div>
+    </div>
+</div>-->
