@@ -16,25 +16,25 @@ const signupBtnInForm = document.getElementById('form-signup-btn')
 login.addEventListener('click', (event) =>{
     console.log("it was clicked");
     loginModal.classList.remove('hidden')
-    document.querySelector('body').classList.add('overflow-hidden');
+    preserveScroll()
 })
 
 login2.addEventListener('click', (event) =>{
     console.log("Logged in");
     loginModal.classList.remove('hidden')
-    document.querySelector('body').classList.add('overflow-hidden');
+    preserveScroll()
 })
 
 cross.addEventListener('click', (event) =>{
     console.log("Cross button");
     loginModal.classList.add('hidden')
-    document.querySelector('body').classList.remove('overflow-hidden');
+    addScroll()
 })
 
 loginModal.addEventListener('click' , (e) =>{
     loginModal.classList.add('hidden')
     console.log('outside of form');
-    document.querySelector('body').classList.remove('overflow-hidden');
+    addScroll()
     
 })
 
@@ -46,7 +46,7 @@ loginForm.addEventListener('click', (e) =>{
 signupBtnInForm.addEventListener('click', () =>{
     loginModal.classList.add('hidden')
     signupModal.classList.remove('hidden')
-    document.querySelector('body').classList.add('overflow-hidden');
+    preserveScroll()
 })
 
 
@@ -77,9 +77,13 @@ signupForm.addEventListener('click', (e) =>{
 loginBtnInForm.addEventListener('click', () =>{
     signupModal.classList.add('hidden')
     loginModal.classList.remove('hidden')
-    document.querySelector('body').classList.add('overflow-hidden');
+    preserveScroll()
 })
 
-// function preserveScroll() {
-//     document.querySelector('body').classList.add('overflow-hidden');
-// }
+function preserveScroll() {
+    document.querySelector('body').classList.add('overflow-hidden');
+}
+
+function addScroll() {
+    document.querySelector('body').classList.remove('overflow-hidden');
+}
