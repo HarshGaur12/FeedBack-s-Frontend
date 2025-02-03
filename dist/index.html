@@ -11,27 +11,43 @@
 
 </head>
 <body class="">
-
     <!-- navbar starts  -->
 
     <nav class='w-full h-14 flex justify-between px-4 md:px-10 items-center bg-opacity-40 fixed backdrop-blur z-10'>
         <div class='text-2xl font-bold cursor-pointer'>FeedBacks.in</div>
         <ul class='hidden md:flex'>
-            <li class='mx-[20px] cursor-pointer hover:font-semibold hover:underline'>Home</li>
-            <li class='mx-[20px] cursor-pointer hover:font-semibold hover:underline'>About Us</li>
-            <li class='mx-[20px] cursor-pointer hover:font-semibold hover:underline'>Contact Us</li>
+            <li class='mx-[20px] cursor-pointer hover:text-green-400'>Home</li>
+            <li class='mx-[20px] cursor-pointer hover:text-green-400'>About Us</li>
+            <li class='mx-[20px] cursor-pointer hover:text-green-400'>Contact Us</li>
         </ul>
         <div class='hidden md:block'>
-            <button type="button" id="login-btn" class='px-2 py-1 mx-[5px] rounded-md hover:bg-green-400 hover:text-white hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in border-[2px] hover:border-green-400'>Log In</button>
-            <button type="button" id="signup-btn" class='px-2 py-1 mx-[5px] rounded-md text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black'>Sign Up</button>
+            <button type="button" class='login-btn px-2 py-1 mx-[5px] rounded-md hover:bg-green-400 hover:text-white hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in border-[2px] hover:border-green-400'>Log In</button>
+            <button type="button" class='signup-btn px-2 py-1 mx-[5px] rounded-md text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black'>Sign Up</button>
         </div>
         <div class='md:hidden'>
-            <a href="#" class='text-2xl'>&#8801;</a>
+            <a href="#" id="ham-btn" class='text-2xl'>&#8801;</a>
         </div>
     </nav>
 
     <!-- navbar ends -->
 
+    <!-- Hamburger Modal starts -->
+    <div id="ham-modal" class="hidden w-screen h-auto z-20 bg-transparent fixed flex justify-end mt-14 ">
+         <div id="ham-form" class="w-44 h-[10.5rem] bg-white mx-8 rounded-xl shadow-lg border-black border-[1px] flex flex-col backdrop-blur">
+            <ul class='mx-4'>
+                <li class='cursor-pointer hover:text-green-400 text-xs font-poppins pt-4'>Home</li>
+                <li class='cursor-pointer hover:text-green-400 text-xs font-poppins pt-1'>About Us</li>
+                <li class='cursor-pointer hover:text-green-400 text-xs font-poppins pt-1'>Contact Us</li>
+            </ul>
+
+            <div class='flex flex-col mt-3 font-poppins text-sm'>
+                <button type="button" class='login-btn px-2 py-1 mx-[10px] rounded hover:bg-green-400 hover:text-white hover:shadow-[0_0_5px_rgb(74,222,128)] transition ease-in hover:border-green-400 border'>Log In</button>
+                <button type="button" class='signup-btn px-2 py-1 mx-[10px] rounded text-white hover:bg-green-400 hover:shadow-[0_0_5px_rgb(74,222,128)] transition ease-in bg-black mt-2'>Sign Up</button>
+            </div>
+            
+         </div>
+    </div>
+    <!-- Hamburger Modal Ends -->
 
     <!-- login form starts -->
 
@@ -55,7 +71,7 @@
                         <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="w-5 h-5 mr-2">
                         Sign in with Google
                     </button>
-                    <span id="form-signup-btn" class='py-2 flex justify-center cursor-pointer text-xs'>Don't have an account?<span class='text-blue-500 mx-1'>Sign up</span></span>
+                    <span class='signup-btn py-2 flex justify-center cursor-pointer text-xs'>Don't have an account?<span class='text-blue-500 mx-1'>Sign up</span></span>
                     <span class='flex justify-center cursor-pointer text-xs text-blue-500'>Forget Password?</span>
                 </form>
             </div>
@@ -90,7 +106,7 @@
                         <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="w-5 h-5 mr-2">
                         Sign up with Google
                     </button>
-                    <span id="form-login-btn" class='py-2 flex justify-center cursor-pointer text-xs'>Already have an account?<span class='text-blue-500 mx-1'>Login</span></span>
+                    <span class='login-btn py-2 flex justify-center cursor-pointer text-xs'>Already have an account?<span class='text-blue-500 mx-1'>Login</span></span>
                 </form>
             </div>
         </div>
@@ -101,15 +117,15 @@
 
     <!-- main section starts -->
 
-    <section class='bg-[radial-gradient(circle_at_0_100%,#d8eedc,#fff0_50%),radial-gradient(circle_at_100%_100%,#e2e1ff,#fff0_50%)] h-screen'>
-        <header class='w-full h-auto flex justify-center items-center absolute sm:top-32 top-20 flex-col'>
+    <section class='bg-[radial-gradient(circle_at_0_100%,#d8eedc,#fff0_50%),radial-gradient(circle_at_100%_100%,#e2e1ff,#fff0_50%)] h-screen py-20 sm:py-32 overflow-auto'>
+        <header class='w-full h-auto flex justify-center items-center flex-col'>
             <h1 class='text-5xl text-center w-3/5 md:text-7xl'>Your feedback matters! Share your thoughts.</h1>
-            <p class='text-center w-3/4 text-xl relative top-4 sm:top-10 text-[#51575c] md:text-2xl'>Enhance events with real-time feedback! Gain insights, improve experiences, and make data-driven decisions effortlessly.</p>
-            <div class='relative top-10 sm:top-20 flex flex-wrap justify-center'>
-               <button type="button" id='getStart-btn' class='px-6 py-2 mx-5 my-2 text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black rounded-md'>Get Started</button>
-               <button type="button" id='login2-btn' class='px-10 py-2 mx-5 my-2 rounded-md hover:bg-green-400 hover:text-white hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in border-[2px] hover:border-green-400 bg-white'>Login</button>
+            <p class='text-center w-3/4 text-xl py-8 sm:py-12 text-[#51575c] md:text-2xl'>Enhance events with real-time feedback! Gain insights, improve experiences, and make data-driven decisions effortlessly.</p>
+            <div class='py-6 sm:py-8 flex flex-wrap justify-center'>
+               <button type="button" class='signup-btn px-6 py-2 mx-5 my-2 text-white hover:bg-green-400 hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in bg-black rounded-md'>Get Started</button>
+               <button type="button" class='login-btn px-10 py-2 mx-5 my-2 rounded-md hover:bg-green-400 hover:text-white hover:shadow-[0_0_10px_rgb(74,222,128)] transition ease-in border-[2px] hover:border-green-400 bg-white'>Login</button>
             </div>
-            <p class='text-center w-3/4 text-xl relative top-16 sm:top-36 text-[#51575c] md:text-2xl'>Your feedback is invaluable to us as we strive to provide the best possible experience.</p>
+            <p class='text-center w-3/4 text-xl py-5 sm:py-7 text-[#51575c] md:text-2xl'>Your feedback is invaluable to us as we strive to provide the best possible experience.</p>
         </header>
     </section>
 
